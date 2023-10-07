@@ -1,0 +1,67 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>CRM Dashboard</title>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/Dashboard_style.css' %}">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="side-header">
+            <h3><span></span>
+                <small class="las la-user-alt"></small>
+                <span>Profile</span>
+            </h3>
+        </div>
+        <div class="side-content">
+            <div class="side-menu">
+                <div class="sidebar">
+                    <ul>
+                        <li><a  href="{% url 'dashboard' %}"><span class="las la-poll"></span><small>Dashboard</small></a></li>
+                        <li><a href="{% url 'customer' %}"><span class="las la-poll"></span><small>Contacts</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Leads</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Accounts</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Opportunities</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Tasks</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Calendar</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Emails</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Reports</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Settings</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Help & Support</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Profile</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Log Out</small></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <header>
+            <div class="header-content">
+                <label for="menu-toggle">
+                </label>
+                <h1>CRM Dashboard</h1>
+                <div class="header-menu">
+                </div>
+            </div>
+        </header>
+    </div>
+    {% block content %}
+    <section class="metrics">
+        <div class="metric-card">
+            <h2>Total Customers</h2>
+            <p class="metric-value">250</p>
+        </div>
+        <div class="metric-card">
+            <h2>Total Sales</h2>
+            <p class="metric-value">$50,000</p>
+        </div>
+        <div class="metric-card">
+            <h2>Total Support Tickets</h2>
+            <p class="metric-value">20</p>
+        </div>
+    </section>
+    {% endblock %}
+
+</body>
