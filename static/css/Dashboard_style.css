@@ -128,3 +128,60 @@ footer {
     margin-top: 37%;
     text-align: center;
 }
+/* Add this CSS to your stylesheet or in a <style> tag in your HTML template */
+
+/* Style the table */
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-left: 412px;
+  }
+  
+  /* Style table headers */
+  th {
+    background-color: #f2f2f2;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #ddd;
+  }
+  
+  /* Style table rows */
+  tr {
+    background-color: #fff;
+  }
+  
+  /* Style table cells */
+  td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Add hover effect to rows */
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Style the table header of the table with ID "customers-table" */
+  #customers-table th {
+    background-color: #3399ff;
+    color: #fff;
+  }
+  
+  /* Style the table rows of the table with ID "customers-table" */
+  #customers-table tr {
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  /* Style the table cells of the table with ID "customers-table" */
+  #customers-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Add hover effect to rows for the table with ID "customers-table" */
+  #customers-table tr:hover {
+    background-color: #cce0ff;
+  }
+  

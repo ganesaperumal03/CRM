@@ -19,7 +19,8 @@
                 <div class="sidebar">
                     <ul>
                         <li><a  href="{% url 'dashboard' %}"><span class="las la-poll"></span><small>Dashboard</small></a></li>
-                        <li><a href="{% url 'customer' %}"><span class="las la-poll"></span><small>Contacts</small></a></li>
+                        <li><a  href="{% url 'customer' %}"><span class="las la-poll"></span><small>customer</small></a></li>
+                        <li><a href=""><span class="las la-poll"></span><small>Contacts</small></a></li>
                         <li><a href=""><span class="las la-poll"></span><small>Leads</small></a></li>
                         <li><a href=""><span class="las la-poll"></span><small>Accounts</small></a></li>
                         <li><a href=""><span class="las la-poll"></span><small>Opportunities</small></a></li>
@@ -63,5 +64,23 @@
         </div>
     </section>
     {% endblock %}
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <!-- Add more table headers for other fields as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer.first_name }}</td>
+                <td>{{ customer.last_name }}</td>
+                <!-- Add more table cells for other fields as needed -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 </body>
