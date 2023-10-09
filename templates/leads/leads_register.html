@@ -1,0 +1,19 @@
+{% load crispy_forms_tags %} <!-- Note the correct spelling -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="custom_header">
+    <h2 class="display-4 text-center">lead Registration</h2>
+</div>
+<body>
+<div class="container-fluid"> 
+    <div class="col-md-offset-4 col-md-4" style="margin-top: 10px; padding: 1px;">
+    <form method="POST"  action="{% url 'submit_leads' %}">
+            {% csrf_token %}
+            {{ form|crispy }} 
+            <button type="submit" value="Register" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+    </div>
+</body>
+

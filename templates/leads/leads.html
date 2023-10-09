@@ -1,0 +1,67 @@
+{% extends "index.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% block leads %}
+<nav class="nav" style="margin-left:230px;">
+    <a href="{% url 'leads_register' %}" class="btn btn-primary custom-button">New Leads</a>
+    <a href="{% url 'leads_analytics' %}" class="btn btn-primary custom-button">leads_analytics</a>
+</nav>
+<h3>leads List</h3>
+<div class="customer_view">
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Company Name</th>
+            <th>Title</th>
+            <th>PhoneNumber</th>
+            <th>EmailAddress</th>
+            <th>Address</th>
+            <th>Source</th>
+            <th>Status</th>
+            <th>LeadScore</th>
+            <th>LeadOwner</th>
+            <th>CreatedDate</th>
+            <th>LastUpdatedDate</th>
+            <th>Notes</th>
+            <th>NextFollowUpDat</th>
+            <th>LeadSource</th>
+            <th>LeadType</th>
+            <th>Campaign</th>
+            <th>Authority</th>
+            <th>Need</th>
+            <th>Timeline</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for lead in leads %}
+        <tr>
+            <td>{{ lead.first_name }}</td>
+            <td>{{ lead.last_name }}</td>
+            <td>{{ lead.company_name }}</td>
+            <td>{{ lead.title }}</td>
+            <td>{{ lead.phone_number }}</td>
+            <td>{{ lead.email_address }}</td>
+            <td>{{ lead.address }}</td>
+            <td>{{ lead.source }}</td>
+            <td>{{ lead.status }}</td>
+            <td>{{ lead.lead_score }}</td>
+            <td>{{ lead.lead_owner }}</td>
+            <td>{{ lead.created_date }}</td>
+            <td>{{ lead.last_updated_date }}</td>
+            <td>{{ lead.notes }}</td>
+            <td>{{ lead.next_follow_up_date }}</td>
+            <td>{{ lead.lead_source }}</td>
+            <td>{{ lead.lead_type }}</td>
+            <td>{{ lead.campaign }}</td>
+            <td>{{ lead.authority }}</td>
+            <td>{{ lead.need }}</td>
+            <td>{{ lead.need }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

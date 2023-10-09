@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/customer.css' %}">
+{% block deals %}
+<nav class="nav" style="margin-left:230px;">
+    <a href="{% url 'deals_analytics' %}" class="btn btn-primary custom-button">deals_analytics</a>
+</nav>
+{% endblock %}

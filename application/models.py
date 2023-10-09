@@ -17,3 +17,28 @@ class Customer(models.Model):
     class Meta:
         app_label = 'application'
 
+class Lead(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    company_name = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(max_length=255, blank=True, null=True)
+    phone_number = models.CharField(max_length=20, blank=True, null=True)
+    email_address = models.EmailField()
+    address = models.TextField(blank=True, null=True)
+    source = models.CharField(max_length=255, blank=True, null=True)
+    status = models.CharField(max_length=255, blank=True, null=True)
+    lead_score = models.IntegerField(blank=True, null=True)
+    lead_owner = models.CharField(max_length=255, blank=True, null=True)
+    created_date = models.DateTimeField(auto_now_add=True)
+    last_updated_date = models.DateTimeField(auto_now=True)
+    notes = models.TextField(blank=True, null=True)
+    next_follow_up_date = models.DateField(blank=True, null=True)
+    lead_source = models.CharField(max_length=255, blank=True, null=True)
+    lead_type = models.CharField(max_length=255, blank=True, null=True)
+    campaign = models.CharField(max_length=255, blank=True, null=True)
+    authority = models.CharField(max_length=255, blank=True, null=True)
+    need = models.TextField(blank=True, null=True)
+    timeline = models.TextField(blank=True, null=True)
+
+    class Meta:
+        app_label = 'application'

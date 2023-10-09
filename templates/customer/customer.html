@@ -1,66 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Registration</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
-</head>
-<body>
-    <header class="container mt-2">
-        <h1 class="display-4 text-center">Customer Registration</h1>
-    </header>
-    <main class="container mt-2">
-        <form method="POST" action="{% url 'submit_customer' %}">
+{% extends "index.html" %}
+{% block customer_table %}
+<nav class="nav" style="margin-left:230px;">
+    <a href="{% url 'customer_register' %}" class="btn btn-primary custom-button">New Customers</a>
+    <a href="" class="btn btn-primary custom-button">Customers_analytics</a>
+</nav>
+<h3>Customer List</h3>
 
-            {% csrf_token %}
-            <div class="mb-3">
-                <label for="first_name" class="form-label">First Name:</label>
-                <input type="text" class="form-control" id="first_name" name="first_name" required>
-            </div>
-            <div class="mb-3">
-                <label for="last_name" class="form-label">Last Name:</label>
-                <input type="text" class="form-control" id="last_name" name="last_name" required>
-            </div>
-            <div class="mb-3">
-                <label for="company_name" class="form-label">Company Name:</label>
-                <input type="text" class="form-control" id="company_name" name="company_name">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="phone_number" class="form-label">Phone Number:</label>
-                <input type="tel" class="form-control" id="phone_number" name="phone_number">
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Address:</label>
-                <textarea class="form-control" id="address" name="address" rows="3"></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="city" class="form-label">City:</label>
-                <input type="text" class="form-control" id="city" name="city">
-            </div>
-            <div class="mb-3">
-                <label for="state" class="form-label">State:</label>
-                <input type="text" class="form-control" id="state" name="state">
-            </div>
-            <div class="mb-3">
-                <label for="postal_code" class="form-label">Postal Code:</label>
-                <input type="text" class="form-control" id="postal_code" name="postal_code">
-            </div>
-            <div class="mb-3">
-                <label for="country" class="form-label">Country:</label>
-                <input type="text" class="form-control" id="country" name="country">
-            </div>
-            <div class="mb-3">
-                <label for="notes" class="form-label">Notes:</label>
-                <textarea class="form-control" id="notes" name="notes" rows="4"></textarea>
-            </div>
-            <button type="submit" value="Register" class="btn btn-primary">Register</button>
-        </form>
-    </main>
-</body>
-</html>
+<div class="customer_view">
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Company Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Postal Code</th>
+            <th>Country</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer.first_name }}</td>
+            <td>{{ customer.last_name }}</td>
+            <td>{{ customer.company_name }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.phone_number }}</td>
+            <td>{{ customer.address }}</td>
+            <td>{{ customer.city }}</td>
+            <td>{{ customer.state }}</td>
+            <td>{{ customer.postal_code }}</td>
+            <td>{{ customer.country }}</td>
+            <td>{{ customer.notes }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}
