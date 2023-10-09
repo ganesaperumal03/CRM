@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'crm_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ant-crm',
+        'NAME': 'ant_crm',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',

@@ -33,7 +33,7 @@ def leads(request):
     return render(request, "leads/leads.html", {'leads': leads})
     
 def leads_register(request):
-    form = CustomerForm()
+    form = LeadForm()
     return render(request, "leads/leads_register.html",{'form': form})
 
 def leads_analytics(request):

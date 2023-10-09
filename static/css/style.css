@@ -185,6 +185,7 @@ table {
   
   tr {
     background-color: #fff;
+    padding: 10px;
   }
   
   /* Style table cells */
