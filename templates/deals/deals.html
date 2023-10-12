@@ -1,43 +1,58 @@
 {% extends "index.html" %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/customer.css' %}">
 {% block deals %}
-<nav class="nav" style="margin-left:230px;">
-    <a href="{% url 'deals_analytics' %}" class="btn btn-primary custom-button">deals_analytics</a>
-</nav>
-<h3>leads List</h3>
-<div class="customer_view">
-<table>
-    <thead>
-        <tr>
-            <th>DealID</th>
-            <th>LeadID</th>
-            <th>Deal_Name</th>
-            <th>Amount</th>
-            <th>CloseDate</th>
-            <th>Stage</th>
-            <th>SalesRep</th>
-            <th>CreatedDate</th>
-            <th>LastUpdatedDate</th>
-            <th>Notes</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for lead in leads %}
-        <tr>
-            <td>{{ lead.DealID }}</td>
-            <td>{{ lead.LeadID }}</td>
-            <td>{{ lead.Deal_Name }}</td>
-            <td>{{ lead.Amount }}</td>
-            <td>{{ lead.CloseDate }}</td>
-            <td>{{ lead.Stage }}</td>
-            <td>{{ lead.SalesRep }}</td>
-            <td>{{ lead.CreatedDate }}</td>
-            <td>{{ lead.LastUpdatedDate }}</td>
-            <td>{{ lead.Notes }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-</div>
+
+<body>
+
+    <div class="container mt-5" style="padding-top: 60px;">
+        <div class="d-flex justify-content-between align-items-center">
+            <h1>Deals</h1>
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="{% url 'deals_register' %}" class="btn btn-dark mr-2">Create New Deal</a>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Deal ID</th>
+                        <th>Deal Name</th>
+                        <th>Stage</th>
+                        <th>Activity</th>
+                        <th>Client</th>
+                        <th>Amount</th>
+                        <th>Responsible</th>
+                        <th>Created</th>
+                        <th>Customer Journey</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for deal in deals %}
+                    <tr>
+                        <td>{{ deal.deal_id }}</td>
+                        <td>{{ deal.deal_name }}</td>
+                        <td>{{ deal.stage }}</td>
+                        <td>{{ deal.activity }}</td>
+                        <td>{{ deal.client }}</td>
+                        <td>₹{{ deal.amount|floatformat:2 }}</td>
+                        <td>{{ deal.responsible }}</td>
+                        <td>{{ deal.created|date:"F d, Y" }}</td>
+                        <td>{{ deal.customer_journey }}</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Update and Delete Buttons">
+                                <a href="{% url 'deals_update' deal.deal_id %}" class="btn btn-primary">Update</a>
+                                <a href="{% url 'deals_delete' deal.deal_id %}" class="btn btn-danger">Delete</a>
+                            </div>
+                        </td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
 {% endblock %}
+</html>

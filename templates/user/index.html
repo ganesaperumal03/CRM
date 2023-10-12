@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ant Solutions CRM</title>
+    <!-- Load static files -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/user.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<!-- Navbar with dark background -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><img src="{% static 'images/logo.png' %}" alt="Ant Solutions Logo"></a>
+    <!-- You can add navigation links here if needed -->
+</nav>
+
+<!-- Page Content -->
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-6 text-center">
+            <h1>Welcome to Ant Solutions CRM</h1>
+            <p>Streamline your customer relationships and manage your business efficiently.</p>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Login</h2>
+                    <!-- Replace with your login form or link to your login page -->
+                    <p>Already have an account? <a href="{% url 'user_login' %}">Login</a></p>
+                </div>
+            </div>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h2>Sign Up</h2>
+                    <!-- Replace with your sign-up form or link to your sign-up page -->
+                    <p>New to Ant Solutions? <a href="{% url 'user_signup' %}">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white">
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-md-6">
+                <address>
+                    <p>&copy; 2023 Ant Solutions</p>
+                    <p>67/1, SBI Colony Main Road, Bypass Road, Madurai 625016</p>
+                </address>
+            </div>
+            <div class="col-md-6">
+                <address>
+                    <p>Email: <a href="mailto:Sales@antsolution.in">Sales@antsolution.in</a></p>
+                    <p>Phone: +919843060968</p>
+                    <p><a href="#">Help</a> | <a href="#">Registered</a> | <a href="#">Privacy Policy</a></p>
+                </address>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Link to Bootstrap JS (optional) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

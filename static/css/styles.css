@@ -1,0 +1,166 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Background color for the entire page */
+}
+
+.container {
+  margin-top: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+  border-radius: 0;
+}
+
+.navbar-brand img {
+  max-height: 40px; /* Adjust the logo's max height as needed */
+}
+
+/* Welcome Page Styles */
+.welcome-container {
+  text-align: center;
+  padding: 40px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Login and Sign-Up Page Styles */
+.card {
+  border: none;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Styles */
+footer {
+  position: fixed;
+  bottom: 0;
+  height: auto; /* Allow the footer to adjust its height based on content */
+  width: 100%;
+  background-color: #343a40; /* Choose the desired background color */
+  color: #fff; /* Text color */
+  text-align: center;
+  padding: 10px 0; /* Adjust the padding as desired */
+}
+
+/* Ensure details are visible within the footer */
+footer p {
+  margin: 5px 0;
+}
+
+/* Apply styles to elements within the CRM page */
+.crm-page {
+  background-color: #f8f9fa;
+  /* Add more styles as needed */
+}
+
+/* Navbar Styles for CRM Page */
+.crm-page .navbar {
+  background-color: #343a40;
+}
+
+/* Sidebar Styles for CRM Page */
+.crm-page .card {
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.crm-page .card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.crm-page .card img {
+  max-width: 100px;
+  height: auto;
+  border: 2px solid #007bff; /* Border color for the user avatar */
+  border-radius: 50%;
+}
+
+/* Footer Styles for CRM Page */
+.crm-page footer {
+  position: absolute;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  background-color: #343a40; /* Footer background color */
+  color: #fff; /* Footer text color */
+  text-align: center;
+  padding: 10px 0; /* Footer padding */
+}
+
+/* Custom CSS for navbar and avatar size */
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.navbar {
+  min-height: 60px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.navbar-toggler-icon {
+  line-height: 40px;
+}
+
+.header {
+  margin-top: 150px;
+}
+
+.card-row {
+  justify-content: center;
+}
+
+.card {
+  margin: 20px;
+  background-color: #343a40; /* Set the same color as the navbar */
+  border: none; /* Remove card borders */
+  color: #fff; /* Text color for the cards */
+}
+
+.card-link {
+  color: #fff; /* Text color for the card links */
+  text-decoration: none;
+}
+
+.navbar .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+/* Style for the footer */
+.footer {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  height: 25%;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+}

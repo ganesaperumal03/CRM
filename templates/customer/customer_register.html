@@ -1,3 +1,6 @@
+{% extends "index.html" %}
+{% load crispy_forms_tags %}
+{% block customer %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,61 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Registration</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstarp/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <div class="custom_header">
         <h2 class="display-4 text-center">Customer Registration</h2>
   </div>
-    <main class="container mt-2" id="registration-form">
-        <form method="POST" action="{% url 'submit_customer' %}">
-
+    <main class="container col-md-offset-4" id="registration-form">
+        <form method="POST"  action="{% url 'submit_customer' %}">
             {% csrf_token %}
-            <div class="mb-3">
-                <label for="first_name" class="form-label">First Name:</label>
-                <input type="text" class="form-control" id="first_name" name="first_name" required>
-            </div>
-            <div class="mb-3">
-                <label for="last_name" class="form-label">Last Name:</label>
-                <input type="text" class="form-control" id="last_name" name="last_name" required>
-            </div>
-            <div class="mb-3">
-                <label for="company_name" class="form-label">Company Name:</label>
-                <input type="text" class="form-control" id="company_name" name="company_name">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="phone_number" class="form-label">Phone Number:</label>
-                <input type="tel" class="form-control" id="phone_number" name="phone_number">
-            </div>
-            <div class="mb-3">
-                <label for="address" class="form-label">Address:</label>
-                <textarea class="form-control" id="address" name="address" rows="3"></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="city" class="form-label">City:</label>
-                <input type="text" class="form-control" id="city" name="city">
-            </div>
-            <div class="mb-3">
-                <label for="state" class="form-label">State:</label>
-                <input type="text" class="form-control" id="state" name="state">
-            </div>
-            <div class="mb-3">
-                <label for="postal_code" class="form-label">Postal Code:</label>
-                <input type="text" class="form-control" id="postal_code" name="postal_code">
-            </div>
-            <div class="mb-3">
-                <label for="country" class="form-label">Country:</label>
-                <input type="text" class="form-control" id="country" name="country">
-            </div>
-            <div class="mb-3">
-                <label for="notes" class="form-label">Notes:</label>
-                <textarea class="form-control" id="notes" name="notes" rows="4"></textarea>
-            </div>
+            {{ form|crispy }} 
             <button type="submit" value="Register" class="btn btn-primary">Register</button>
         </form>
     </main>
@@ -68,3 +28,4 @@
 <script src="{% static 'js/script.js' %}"></script>
 
 </html>
+{% endblock %}

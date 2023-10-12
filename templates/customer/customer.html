@@ -1,12 +1,14 @@
 {% extends "index.html" %}
-{% block customer_table %}
-<nav class="nav" style="margin-left:230px;">
-    <a href="{% url 'customer_register' %}" class="btn btn-primary custom-button">New Customers</a>
-    <a href="" class="btn btn-primary custom-button">Customers_analytics</a>
+{% load crispy_forms_tags %} 
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="{% static 'js/script.js' %}"></script>
+{% block customer %}
+<nav class="nav" style="margin-left:100px; margin-top: 152px;">
+    <a href="{% url 'dashboard' %}" class="btn btn-primary custom-button">dashboard</a><br>
+    <a href="{% url 'customer_register' %}" class="btn btn-primary custom-button"">New Customer</a>
 </nav>
-<h3>Customer List</h3>
-
-<div class="customer_view">
+<div class="customer_view"><center>
 <table>
     <thead>
         <tr>
@@ -40,7 +42,20 @@
         </tr>
         {% endfor %}
     </tbody>
-</table>
+</table></center>
+
+<body>
+    <div class="container-fluid">
+        <div id="customer-form-container" class="col-md-offset-4 col-md-4" style="margin-top: 10px; padding: 1px; display: none;">
+            <form method="POST" action="{% url 'submit_customer' %}">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" value="Register" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
 </div>
 
 {% endblock %}

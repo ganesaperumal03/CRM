@@ -2,28 +2,65 @@
 {% block dashboard %}
 
 <div class="main-content">
-    <header>
-        <div class="header-content">
-            <label for="menu-toggle">
-            </label>
-            <h1>CRM Dashboard</h1>
-            <div class="header-menu">
-            </div>
+    <div class="header text-center mb-4">
+        <h1>Welcome to Ant Solutions CRM</h1>
+    </div>
+
+    <div class="row card-row">
+        <div class="col-lg-4 col-md-6 mb-4">
+            <a href="{% url 'deals' %}" class="card-link">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Deals</h5>
+                    </div>
+                </div>
+            </a>
         </div>
-    </header>
-    <section class="metrics">
-        <div class="metric-card">
-            <h2>Total Customers</h2>
-            <p class="metric-value">250</p>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <a href="{% url 'leads' %}" class="card-link">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Leads</h5>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="metric-card">
-            <h2>Total Sales</h2>
-            <p class="metric-value">$50,000</p>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <a href="" class="card-link">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Inventory</h5>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="metric-card">
-            <h2>Total Support Tickets</h2>
-            <p class="metric-value">20</p>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <a href="{% url 'customer' %}" class="card-link">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Customers</h5>
+                    </div>
+                </div>
+            </a>
         </div>
-    </section>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <a href="" class="card-link">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Sales</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <a href="{% url 'analytics' %}" class="card-link">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Analytics</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
 {% endblock %}

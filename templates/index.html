@@ -1,60 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <title>CRM Dashboard</title>
-    {% load static %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deals Dashboard</title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstarp/bootstrap.min.css' %}">
+</head>
+    
+
+</head>
 <body>
-    <div class="sidebar">
-        <div class="side-content">
-            <div class="side-menu">
-                <div class="sidebar">
-                    <ul>
-                        <li><a  href="{% url 'dashboard' %}"><span class="las la-poll"></span><small>Dashboard</small></a></li>
-                        <li><a  href="{% url 'customer' %}"><span class="las la-poll"></span><small>Customers</small></a></li>
-                        <li><a href="{% url 'leads' %}"><span class="las la-poll"></span><small>Leads</small></a></li>
-                        <li><a href="{% url 'deals' %}"><span class="las la-poll"></span><small>Deals</small></a></li>
-                        <li><a href=""><span class="las la-poll"></span><small>Contacts</small></a></li>
-                        <li><a href=""><span class="las la-poll"></span><small>Accounts</small></a></li>
-                        <li><a href=""><span class="las la-poll"></span><small>Opportunities</small></a></li>
-                        <li><a href=""><span class="las la-poll"></span><small>Tasks</small></a></li>
-                        <li><a href=""><span class="las la-poll"></span><small>Calendar</small></a></li>
-                        <li><a href=""><span class="las la-poll"></span><small>Emails</small></a></li>
-                        <li><a href=""><span class="las la-poll"></span><small>Reports</small></a></li>
-                        <li><a href=""><span class="las la-poll"></span><small>Settings</small></a></li>
-                        <li><a href=""><span class="las la-poll"></span><small>Help & Support</small></a></li>
-                        <li><a href=""><span class="las la-poll"></span><small>Profile</small></a></li>
-                        <li><a href=""><span class="las la-poll"></span><small>Log Out</small></a></li>
-                    </ul>
-                </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static 'images/logo.png' %}" alt="Ant Solutions Logo">
+    </a>
+    <div class="ml-auto">
+        <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="userDropdown" role= "button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="{% static 'images/user-avatar.png'%}" alt="User Avatar" class="user-avatar">
+            </a>
+            <div class="dropdown-menu dropdown-menu-dark dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">Edit Profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'user_logout' %}">Log Out</a>
             </div>
         </div>
     </div>
-    {% block dashboard %}
-    {% endblock %}
+</nav>
 
-<!-- customer -->
-    <div class="customer_view">
-    {% block customer_table %}
-    {% endblock %}</div>
+{% block dashboard %}
+{% endblock %}
+{% block analytics %}
+{% endblock %}
+{% block leads %}
+{% endblock %}
+{% block deals %}
+{% endblock %}
+{% block customer %}
+{% endblock %}
 
-<!-- leads -->
-    <div class="leads">
-    {% block leads %}
-    {% endblock %}</div>
 
-    <div class="analystics">
-    {% block leads_analystics %}
-    {% endblock %}</div>
-<!-- DEALS -->
-
-<div class="deals">
-    {% block deals %}
-    {% endblock %}</div>
-
-    <div class="analystics">
-        {% block deals_analystics %}
-        {% endblock %}</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<footer class="footer">
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-md-6">
+                <p>&copy; 2023 Ant Solutions</p>
+                <p>67/1, SBI Colony Main Road, Bypass Road, Madurai 625016</p>
+            </div>
+            <div class="col-md-6">
+                <p>Email: Sales@antsolution.in</p>
+                <p>Phone: +919843060968</p>
+                <p><a href="#">Help</a> | <a href="#">Registered</a> | <a href="#">Privacy Policy</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

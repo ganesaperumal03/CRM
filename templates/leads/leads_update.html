@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Lead</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        .lead-update-form-body {
+            position: relative;
+            width: 30rem;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #D3D3D3;
+            border: 1px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .card-title {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #000000;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #000000;
+        }
+
+        input[type="text"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+            color: #000000;
+        }
+        
+        #id_email,
+        #id_lead_score {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+            color: #000000;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'leads' %}">Back to Leads</a>
+    </nav>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center">
+            <div class="lead-update-form-body">
+                <h5 class="card-title text-center">Update Lead</h5>
+                <form method="post" id="update-lead-form">
+                    {% csrf_token %}
+                        
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                {{ form.first_name.label_tag }}
+                                {{ form.first_name }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                {{ form.last_name.label_tag }}
+                                {{ form.last_name }}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            {{ form.company.label_tag }}
+                            {{ form.company }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.email.label_tag }}
+                            {{ form.email }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.phone.label_tag }}
+                            {{ form.phone }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.address.label_tag }}
+                            {{ form.address }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.status.label_tag }}
+                            {{ form.status }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.source.label_tag }}
+                            {{ form.source }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.assigned_to.label_tag }}
+                            {{ form.assigned_to }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.lead_quality.label_tag }}
+                            {{ form.lead_quality }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.lead_score.label_tag }}
+                            {{ form.lead_score }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.notes.label_tag }}
+                            {{ form.notes }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.created_date.label_tag }}
+                            {{ form.created_date }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.last_contacted.label_tag }}
+                            {{ form.last_contacted }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.next_followup_date.label_tag }}
+                            {{ form.next_followup_date }}
+                        </div>
+                        <div class="form-group d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                            <a href="{% url 'leads' %}" class="btn btn-secondary ml-2">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapc></script>
+</body>
+</html>
